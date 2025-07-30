@@ -27,7 +27,7 @@ const HeroSection = () => {
           <div className="flex items-center gap-4 flex-wrap">
             <button className="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition flex items-center gap-2">
               <FaLock />
-              Buy Now
+              Order Now
             </button>
             <button className="flex items-center gap-2 text-blue-700 font-medium">
               <span className="p-3 bg-yellow-400 rounded-full">

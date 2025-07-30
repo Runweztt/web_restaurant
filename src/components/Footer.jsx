@@ -11,7 +11,7 @@ function Footer() {
         <div>
           <img src='' alt="logo" className="w-32 mb-4" />
           <p className="text-sm leading-relaxed">
-            Empowering creators, teams & remote professionals through premium workspaces.
+            serving the best english dish 
           </p>
         </div>
 
@@ -48,7 +48,7 @@ function Footer() {
 
       {/* Footer Bottom */}
       <div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
-        <p>&copy; {new Date().getFullYear()} cleaning. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} foodle. All rights reserved.</p>
       </div>
     </footer>
   );
