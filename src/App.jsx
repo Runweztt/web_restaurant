@@ -5,6 +5,7 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
+
 import Rootlayout from './layout/Rootlayout';
 import Home from './page/Home';
 import About from './page/About';
@@ -19,20 +20,15 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="booking" element={<Booking />} />
       <Route path="booking/:type" element={<Booking />} />
-      <Route path='Login' element={<Login/>}/>
-      <Route path='Menu' element={<Menu/>}/>
+      <Route path="login" element={<Login />} />
+      <Route path="menu" element={<Menu />} />
     </Route>
-  ),
-  // {
-  //   basename: '/web_restaurant', 
-  // }
+  )
 );
 
 const App = () => {
   return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
+    <RouterProvider router={router} />
   );
 };
 
