@@ -23,9 +23,9 @@ const router = createBrowserRouter(
       <Route path='Menu' element={<Menu/>}/>
     </Route>
   ),
-  // {
-  //   basename: '/cleaningweb', // ✅ This is critical for subfolder deployments
-  // }
+  {
+    basename: '/cleaningweb', // ✅ This is critical for subfolder deployments
+  }
 );
 
 const App = () => {

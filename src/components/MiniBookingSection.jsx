@@ -6,6 +6,7 @@ import dinnerImg from "../assets/dinner.jpg";
 import dessertImg from "../assets/dessert.jpg";
 import { useNavigate } from "react-router-dom";
 
+
 const menuCategories = [
   { id: "breakfast", title: "Breakfast", img: breakfastImg },
   { id: "lunch", title: "Lunch", img: lunchImg },
@@ -55,6 +56,7 @@ const MiniBookingSection = () => {
           </motion.div>
         ))}
       </div>
+    
     </div>
   );
 };

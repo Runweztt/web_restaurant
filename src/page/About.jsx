@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import teamImg from "../assets/restaurant_team.jpg";
 import happyClientImg from "../assets/happy_diner.jpg";
-import MiniCard from "../components/MiniCard";
 
 const aboutHighlights = [
   {
@@ -34,40 +33,45 @@ const About = () => {
   return (
     <section className="bg-white text-[#0B1F35]">
       {/* Header */}
-      <div className="px-4 py-20 text-center max-w-4xl mx-auto">
+      <div className="px-4 py-20 text-center max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">About Our Restaurant</h1>
         <p className="text-gray-600 text-lg">
           Serving hearty meals, warm memories, and true British hospitality.
         </p>
       </div>
 
-      {/* Team Image & Our Story */}
-      <div className="grid lg:grid-cols-2 gap-10 items-center px-6 lg:px-20 mb-20">
-        <motion.img
-          src={teamImg}
-          alt="Our Restaurant Team"
-          className="rounded-xl shadow-md"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        />
-
+      {/* Image + Our Story */}
+      <div className="flex flex-col-reverse lg:flex-row items-center gap-10 px-4 sm:px-6 lg:px-20 mb-20">
         <motion.div
+          className="w-full lg:w-1/2"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl font-semibold mb-4">Our Story</h2>
-          <p className="text-gray-700 leading-relaxed">
+          <h2 className="text-2xl font-semibold mb-4 text-center lg:text-left">Our Story</h2>
+          <p className="text-gray-700 leading-relaxed text-base text-center lg:text-left">
             We began with a single vision: to bring comfort, flavour, and British tradition to every plate.
-            Over the years, our passion for food and community has turned us into a local favourite. Every dish
-            is prepared with love, and every guest is welcomed like family.
+            Over the years, our passion for food and community has turned us into a local favourite.
+            Every dish is prepared with love, and every guest is welcomed like family.
           </p>
+        </motion.div>
+
+        <motion.div
+          className="w-full lg:w-1/2"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <img
+            src={teamImg}
+            alt="Our Restaurant Team"
+            className="w-full max-w-md mx-auto rounded-xl shadow-md object-cover"
+          />
         </motion.div>
       </div>
 
-      {/* Highlights */}
-      <div className="bg-[#f9f9f9] py-20 px-6 lg:px-20">
+      {/* Why Dine With Us */}
+      <div className="bg-[#f9f9f9] py-20 px-4 sm:px-6 lg:px-20">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-2">Why Dine With Us?</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -75,7 +79,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {aboutHighlights.map((item, idx) => (
             <motion.div
               key={idx}
@@ -93,7 +97,7 @@ const About = () => {
       </div>
 
       {/* Core Values */}
-      <div className="py-20 px-6 lg:px-20 text-center">
+      <div className="py-20 px-4 sm:px-6 lg:px-20 text-center">
         <h2 className="text-2xl font-bold mb-4">What We Stand For</h2>
         <ul className="text-gray-700 space-y-2 max-w-lg mx-auto">
           {coreValues.map((val, i) => (
@@ -110,12 +114,12 @@ const About = () => {
         </ul>
       </div>
 
-      {/* Optional: Call to action or Happy Diner Image */}
-      <div className="px-6 lg:px-20 pb-20 text-center">
+      {/* Happy Diner CTA Image */}
+      <div className="px-4 sm:px-6 lg:px-20 pb-20 text-center">
         <motion.img
           src={happyClientImg}
           alt="Happy Diner"
-          className="mx-auto rounded-xl shadow-md max-w-xl"
+          className="mx-auto rounded-xl shadow-md w-full max-w-xl object-cover"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
@@ -124,7 +128,6 @@ const About = () => {
           Every smile we serve is a reminder of why we do what we do.
         </p>
       </div>
-
     </section>
   );
 };

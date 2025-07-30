@@ -20,7 +20,7 @@ function Footer() {
           <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li><a href="/" className="hover:underline">Home</a></li>
-            <li><a href="/product" className="hover:underline">Workspaces</a></li>
+            <li><a href="/product" className="hover:underline">menu</a></li>
             <li><a href="#contact" className="hover:underline">Contact</a></li>
             <li><a href="#faq" className="hover:underline">FAQs</a></li>
           </ul>
@@ -29,7 +29,7 @@ function Footer() {
         {/* Contact Info */}
         <div>
           <h3 className="text-lg font-semibold mb-3">Contact</h3>
-          <p className="text-sm">Email: hello@worknest.com</p>
+          <p className="text-sm">Email: hello@foodle.com</p>
           <p className="text-sm">Phone: +234 810 123 4567</p>
           <p className="text-sm">Address: 14 Innovation Way, Lagos, NG</p>
         </div>
