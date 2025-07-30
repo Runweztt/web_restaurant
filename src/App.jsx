@@ -23,9 +23,9 @@ const router = createBrowserRouter(
       <Route path='Menu' element={<Menu/>}/>
     </Route>
   ),
-  {
-    basename: '/web_restaurant', 
-  }
+  // {
+  //   basename: '/web_restaurant', 
+  // }
 );
 
 const App = () => {
