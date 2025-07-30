@@ -28,6 +28,9 @@ const Navbar = () => {
         <li>
           <NavLink to="/Booking" className="hover:text-primary">Booking</NavLink>
         </li>
+         <li>
+          <NavLink to="/Menu" className="hover:text-primary">Menu</NavLink>
+        </li>
       </ul>
 
       {/* Right section: Sign in + menu icon */}
@@ -68,6 +71,9 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to="/About" onClick={() => setShowmenu(false)}>About</NavLink>
+            </li>
+              <li>
+              <NavLink to="/Menu" onClick={() => setShowmenu(false)}>Menu</NavLink>
             </li>
             <li>
               <NavLink to="/Booking" onClick={() => setShowmenu(false)}>Booking</NavLink>

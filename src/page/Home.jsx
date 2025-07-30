@@ -9,7 +9,6 @@ const Home = () => {
   return (
     <div>
       <HeroSection/>
-       <MiniCard/>
       <CardSection/>
       <MiniBookingSection/>
       <News/>

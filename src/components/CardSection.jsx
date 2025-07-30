@@ -1,44 +1,44 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaBroom, FaSprayCan, FaToilet, FaRecycle } from "react-icons/fa";
+import { FaUtensils, FaConciergeBell, FaLeaf, FaWineGlassAlt } from "react-icons/fa";
 
 const services = [
   {
-    title: "Residential Cleaning",
-    description: "Thorough and affordable home cleaning tailored to your needs.",
-    icon: <FaBroom className="text-white text-2xl" />,
-    bg: "bg-blue-600",
+    title: "Dine-In Experience",
+    description: "Enjoy a premium dining experience in our warm and elegant space.",
+    icon: <FaUtensils className="text-white text-2xl" />,
+    bg: "bg-[#0B1F35]", // your brand color
   },
   {
-    title: "Commercial Cleaning",
-    description: "We keep your office or workspace spotless and hygienic.",
-    icon: <FaSprayCan className="text-white text-2xl" />,
+    title: "Fast Delivery",
+    description: "Delicious meals delivered to your doorstep — fresh and on time.",
+    icon: <FaConciergeBell className="text-white text-2xl" />,
     bg: "bg-yellow-500",
   },
   {
-    title: "Restroom Sanitization",
-    description: "Sanitary and disinfected restrooms for safety and comfort.",
-    icon: <FaToilet className="text-white text-2xl" />,
+    title: "Healthy Options",
+    description: "Nutritious and tasty dishes made with fresh, organic ingredients.",
+    icon: <FaLeaf className="text-white text-2xl" />,
     bg: "bg-green-600",
   },
   {
-    title: "Eco-Friendly Cleaning",
-    description: "Sustainable methods using green products to protect the environment.",
-    icon: <FaRecycle className="text-white text-2xl" />,
-    bg: "bg-teal-600",
+    title: "Beverages & Wine",
+    description: "Explore a curated selection of wines and handcrafted drinks.",
+    icon: <FaWineGlassAlt className="text-white text-2xl" />,
+    bg: "bg-red-500",
   },
 ];
 
 const CardSection = () => {
   return (
-    <div className="bg-white py-20 px-4">
+    <div className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-3xl font-bold text-[#0B1F35] mb-4">
-          Our Professional Services
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0B1F35] mb-4">
+          What We Offer
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto">
-          We provide a range of cleaning services designed to fit every space and schedule.
+          From fresh dishes to fine drinks — we’re redefining your dining experience.
         </p>
       </div>
 
@@ -47,7 +47,7 @@ const CardSection = () => {
         {services.map((service, index) => (
           <motion.div
             key={index}
-            className="bg-[#f9f9f9] p-6 rounded-xl shadow-lg hover:shadow-xl transition"
+            className="bg-[#f9f9f9] p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
