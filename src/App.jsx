@@ -1,9 +1,10 @@
 import React from 'react';
 import {
   createBrowserRouter,
+  createRoutesFromElements,
+  Route,
   RouterProvider,
 } from 'react-router-dom';
-
 import Rootlayout from './layout/Rootlayout';
 import Home from './page/Home';
 import About from './page/About';
@@ -12,27 +13,27 @@ import Login from './page/Login';
 import Menu from './page/Menu';
 
 const router = createBrowserRouter(
-  [
-    {
-      path: '/',
-      element: <Rootlayout />,
-      children: [
-        { index: true, element: <Home /> },
-        { path: 'about', element: <About /> },
-        { path: 'booking', element: <Booking /> },
-        { path: 'booking/:type', element: <Booking /> },
-        { path: 'login', element: <Login /> },
-        { path: 'menu', element: <Menu /> },
-      ],
-    },
-  ],
+  createRoutesFromElements(
+    <Route path="/" element={<Rootlayout />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="booking" element={<Booking />} />
+      <Route path="booking/:type" element={<Booking />} />
+      <Route path='Login' element={<Login/>}/>
+      <Route path='Menu' element={<Menu/>}/>
+    </Route>
+  ),
   {
     basename: '/web_restaurant', 
   }
 );
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  );
 };
 
 export default App;
