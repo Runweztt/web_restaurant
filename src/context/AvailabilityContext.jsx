@@ -1,13 +1,13 @@
 // frontend/src/context/AvailabilityContext.jsx
 import { createContext, useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
-import { SOCKET_URL } from '../config'; // import our production-safe socket URL
+import { SOCKET_URL } from '../config'; 
 
 export const AvailabilityContext = createContext();
 
 export function AvailabilityProvider({ children }) {
-  const [definitions, setDefinitions] = useState([]); // table definitions from CSV
-  const [availableTables, setAvailableTables] = useState([]); // for selected timeSlot
+  const [definitions, setDefinitions] = useState([]); 
+  const [availableTables, setAvailableTables] = useState([]);
   const [bookings, setBookings] = useState([]);
   const [socket, setSocket] = useState(null);
 

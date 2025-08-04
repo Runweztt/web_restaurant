@@ -1,4 +1,4 @@
-// frontend/src/page/AdminDashboard.jsx
+
 import AdminUpload from './AdminUpload';
 
 const AdminDashboard = () => (

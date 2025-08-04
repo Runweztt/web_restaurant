@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState, useRef } from 'react';
 import { AvailabilityContext } from '../context/AvailabilityContext.jsx';
-import { API_BASE } from '../config.js'; //  dynamic API base
+import { API_BASE } from '../config.js';
 
 function Button({ children, onClick, disabled = false, className = '' }) {
   return (
