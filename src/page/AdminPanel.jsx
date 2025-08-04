@@ -1,19 +1,19 @@
 // frontend/src/pages/AdminPanel.jsx
 import React, { useState } from 'react';
 import Papa from 'papaparse'; // to parse CSV file
+import { API_BASE } from '../config'; // ✅ Use dynamic API base URL
 
 const AdminPanel = () => {
   const [csvData, setCsvData] = useState([]);
   const [message, setMessage] = useState('');
 
-  // handle file upload and parse with PapaParse
+  // Handle file upload and parse CSV with PapaParse
   const handleCSVUpload = (e) => {
     const file = e.target.files[0];
-
     if (!file) return;
 
     Papa.parse(file, {
-      header: true, // first row will be column names
+      header: true, // First row will be column names
       skipEmptyLines: true,
       complete: (result) => {
         setCsvData(result.data);
@@ -25,10 +25,10 @@ const AdminPanel = () => {
     });
   };
 
-  // send parsed data to backend API
+  // Send parsed data to backend API
   const handleUploadToBackend = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/tables/upload', {
+      const res = await fetch(`${API_BASE}/api/tables/upload`, { // ✅ Use API_BASE here
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,8 +37,9 @@ const AdminPanel = () => {
       });
 
       const data = await res.json();
-      setMessage(data.message);
+      setMessage(data.message || 'Upload complete');
     } catch (error) {
+      console.error(error);
       setMessage('Failed to upload data to backend');
     }
   };

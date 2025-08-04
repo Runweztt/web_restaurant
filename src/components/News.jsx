@@ -7,7 +7,7 @@ const News = () => {
       <p className="text-gray-600 mb-6">
         Get exclusive dining offers, new menu launches, and special event invites delivered to your inbox.  
         <br className="hidden sm:block" />
-        No spam — just the good stuff.
+        No spam  just the good stuff.
       </p>
       <form className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <input

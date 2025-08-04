@@ -1,6 +1,7 @@
 // frontend/src/context/AvailabilityContext.jsx
 import { createContext, useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
+import { SOCKET_URL } from '../config'; // import our production-safe socket URL
 
 export const AvailabilityContext = createContext();
 
@@ -11,7 +12,8 @@ export function AvailabilityProvider({ children }) {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const s = io('http://localhost:5000'); // adjust origin if different
+    // Use environment variable or fallback URL
+    const s = io(SOCKET_URL);
     setSocket(s);
 
     s.on('tables:definitions-updated', (defs) => {
@@ -20,13 +22,13 @@ export function AvailabilityProvider({ children }) {
 
     s.on('booking:created', ({ booking }) => {
       setBookings((prev) => [...prev, booking]);
-      // If current availability includes that booked table for same slot, remove it
+      // Remove booked table from availability if it matches current view
       setAvailableTables((prev) =>
         prev.filter(
           (t) =>
             !(
               t.table_id === booking.table_id &&
-              booking.timeSlot === t.requestedTimeSlot // see Booking.jsx usage
+              booking.timeSlot === t.requestedTimeSlot
             )
         )
       );
