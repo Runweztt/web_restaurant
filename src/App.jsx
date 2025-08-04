@@ -12,24 +12,25 @@ import About from './page/About';
 import Booking from './page/Booking';
 import Login from './page/Login';
 import Menu from './page/Menu';
+import AdminUpload from './page/AdminUpload';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Rootlayout />}>
+    <Route path="/web_restaurant" element={<Rootlayout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="booking" element={<Booking />} />
       <Route path="booking/:type" element={<Booking />} />
       <Route path="login" element={<Login />} />
       <Route path="menu" element={<Menu />} />
+      <Route path="admin/upload" element={<AdminUpload />} />
+      <Route path="*" element={<div>404 - Page Not Found</div>} />
     </Route>
   )
 );
 
 const App = () => {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
