@@ -180,7 +180,7 @@ export default function Booking() {
               {availableTables.map(t => (
                 <div
                   key={t.table_id}
-                  onClick={() => setSelected(t)}
+                  onClick={() => setSelected({ ...t, table_id: String(t.table_id) })}
                   className={`p-5 rounded-2xl border cursor-pointer transition
                     ${selected?.table_id === t.table_id ? 'ring-2 ring-indigo-500 shadow-lg' : 'shadow hover:shadow-xl'}`}
                 >
