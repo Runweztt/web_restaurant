@@ -29,12 +29,7 @@ const HeroSection = () => {
               <FaLock />
               Order Now
             </button>
-            <button className="flex items-center gap-2 text-blue-700 font-medium">
-              <span className="p-3 bg-yellow-400 rounded-full">
-                <FaPlay className="text-sm text-white" />
-              </span>
-              How To Order
-            </button>
+           
           </div>
         </motion.div>
 

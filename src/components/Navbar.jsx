@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../assets/logo.jpg"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -12,8 +13,8 @@ const Navbar = () => {
       {/* Logo */}
       <img
         onClick={() => navigate(`${base}`)}
-        className="w-44 cursor-pointer"
-        src=""
+        className="w-20 cursor-pointer"
+        src={logo}
         alt="logo"
       />
 
@@ -45,10 +46,10 @@ const Navbar = () => {
       {/* Right section: Sign in + menu icon */}
       <div className="flex items-center gap-4">
         <button
-          onClick={() => navigate(`${base}/login`)}
+          onClick={() => navigate(`${base}/Booking`)}
           className="bg-primary text-white px-6 py-2 rounded-full font-light hidden md:block"
         >
-          Sign In
+           Reservation
         </button>
 
         {/* Mobile menu toggle */}
@@ -69,7 +70,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between px-5 py-6 border-b">
             <img
               className="w-36"
-              src=""
+              src={logo}
               alt="logo"
               onClick={() => {
                 setShowmenu(false);
@@ -108,11 +109,11 @@ const Navbar = () => {
               <button
                 onClick={() => {
                   setShowmenu(false);
-                  navigate(`${base}/login`);
+                  navigate(`${base}/Booking`);
                 }}
                 className="bg-primary hover:bg-blue-700 transition text-white px-6 py-2 rounded-full "
               >
-                Sign In
+                Reservation
               </button>
             </li>
           </ul>

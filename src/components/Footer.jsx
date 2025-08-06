@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import logo from "../assets/logo2.png"
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
         
         {/* Logo and Tagline */}
         <div>
-          <img src="/logo.png" alt="restaurant logo" className="w-32 mb-4" />
+          <img src={logo} alt="restaurant logo" className="w-32 mb-4" />
           <p className="text-sm leading-relaxed">
             Serving the finest English cuisine with a modern twist.
           </p>
